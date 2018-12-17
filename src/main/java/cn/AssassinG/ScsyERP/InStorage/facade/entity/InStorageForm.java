@@ -76,8 +76,8 @@ public class InStorageForm extends FormEntity {
     }
 
     @JSONField(name = "inStorageStatus")
-    public void setInStorageFormStatusName(String name){
-        this.InStorageStatus = InStorageFormStatus.getEnum(name);
+    public void setInStorageFormStatusName(Integer value){
+        this.InStorageStatus = InStorageFormStatus.getEnum(value);
     }
 
     public String getInStorageNumber() {
