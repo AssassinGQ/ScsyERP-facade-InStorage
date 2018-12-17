@@ -62,10 +62,10 @@ public class InStorageForm extends FormEntity {
         return InStorageStatus;
     }
 
-//    @JSONField(deserialize = false)
-//    public void setInStorageStatus(InStorageFormStatus inStorageStatus) {
-//        InStorageStatus = inStorageStatus;
-//    }
+    @JSONField(deserialize = false)
+    public void setInStorageStatus(InStorageFormStatus inStorageStatus) {
+        InStorageStatus = inStorageStatus;
+    }
 
     @JSONField(deserialize = false)
     public void setInStorageStatus(String inStorageStatus) {
