@@ -29,8 +29,8 @@ public class InStorageForm extends FormEntity {
     private Long PickWorker;
     @Valid(varType = Valid.VarType.Number)
     private Long Lister;
-    private Set<Long> DriveWorkers;//弃用，join查询warehouse中的，complete时也根据warehouse中的来
-    private Set<Long> LiftWorkers;//弃用
+//    private Set<Long> DriveWorkers;//弃用，join查询warehouse中的，complete时也根据warehouse中的来
+//    private Set<Long> LiftWorkers;//弃用
     private AccountStatus AccountStatus;
     @Valid(varType = Valid.VarType.Number, nullAble = true, maxValue = 9999)
     private Integer TotalAmount;
@@ -44,8 +44,8 @@ public class InStorageForm extends FormEntity {
 
     public InStorageForm() {
         super();
-        this.DriveWorkers = new HashSet<>();
-        this.LiftWorkers = new HashSet<>();
+//        this.DriveWorkers = new HashSet<>();
+//        this.LiftWorkers = new HashSet<>();
         this.Products = new HashSet<>();
     }
 
@@ -128,27 +128,27 @@ public class InStorageForm extends FormEntity {
         Lister = lister;
     }
 
-    public Set<Long> getDriveWorkers() {
-        return DriveWorkers;
-    }
-
-    public void setDriveWorkers(Set<Long> driveWorkers) {
-        if(driveWorkers == null)
-            this.DriveWorkers = new HashSet<>();
-        else
-            DriveWorkers = driveWorkers;
-    }
-
-    public Set<Long> getLiftWorkers() {
-        return LiftWorkers;
-    }
-
-    public void setLiftWorkers(Set<Long> liftWorkers) {
-        if(liftWorkers == null)
-            this.LiftWorkers = new HashSet<>();
-        else
-            LiftWorkers = liftWorkers;
-    }
+//    public Set<Long> getDriveWorkers() {
+//        return DriveWorkers;
+//    }
+//
+//    public void setDriveWorkers(Set<Long> driveWorkers) {
+//        if(driveWorkers == null)
+//            this.DriveWorkers = new HashSet<>();
+//        else
+//            DriveWorkers = driveWorkers;
+//    }
+//
+//    public Set<Long> getLiftWorkers() {
+//        return LiftWorkers;
+//    }
+//
+//    public void setLiftWorkers(Set<Long> liftWorkers) {
+//        if(liftWorkers == null)
+//            this.LiftWorkers = new HashSet<>();
+//        else
+//            LiftWorkers = liftWorkers;
+//    }
 
     @JSONField(serialize = false)
     public cn.AssassinG.ScsyERP.common.enums.AccountStatus getAccountStatus() {
@@ -169,8 +169,8 @@ public class InStorageForm extends FormEntity {
     }
 
     @JSONField(name = "accountStatus")
-    public void setAccountStatusName(String name){
-        this.AccountStatus = cn.AssassinG.ScsyERP.common.enums.AccountStatus.getEnum(name);
+    public void setAccountStatusName(Integer value){
+        this.AccountStatus = cn.AssassinG.ScsyERP.common.enums.AccountStatus.getEnum(value);
     }
 
     public Integer getTotalAmount() {
@@ -227,8 +227,8 @@ public class InStorageForm extends FormEntity {
                 ", Truck=" + Truck +
                 ", PickWorker=" + PickWorker +
                 ", Lister=" + Lister +
-                ", DriveWorkers=" + DriveWorkers +
-                ", LiftWorkers=" + LiftWorkers +
+//                ", DriveWorkers=" + DriveWorkers +
+//                ", LiftWorkers=" + LiftWorkers +
                 ", AccountStatus=" + AccountStatus +
                 ", TotalAmount=" + TotalAmount +
                 ", TotalVolume=" + TotalVolume +
