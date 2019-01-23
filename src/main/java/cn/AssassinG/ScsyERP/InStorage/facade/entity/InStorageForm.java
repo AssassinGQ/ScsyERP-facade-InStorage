@@ -4,7 +4,6 @@ import cn.AssassinG.ScsyERP.InStorage.facade.enums.InStorageFormStatus;
 import cn.AssassinG.ScsyERP.common.annitations.Valid;
 import cn.AssassinG.ScsyERP.common.entity.FormEntity;
 import cn.AssassinG.ScsyERP.common.enums.AccountStatus;
-import cn.AssassinG.ScsyERP.common.utils.StringUtils;
 import com.alibaba.fastjson.annotation.JSONField;
 
 import javax.persistence.Entity;
@@ -45,13 +44,7 @@ public class InStorageForm extends FormEntity {
 
     public InStorageForm() {
         super();
-//        this.DriveWorkers = new HashSet<>();
-//        this.LiftWorkers = new HashSet<>();
         this.Products = new HashSet<>();
-        this.InStorageNumber = StringUtils.getRandomStr(15, StringUtils.StrType.NUMBER);
-        this.InStorageTime = new Date();
-        this.AccountStatus = cn.AssassinG.ScsyERP.common.enums.AccountStatus.WRZ;
-        this.InStorageStatus = InStorageFormStatus.Working;
     }
 
     public Long getProject() {
