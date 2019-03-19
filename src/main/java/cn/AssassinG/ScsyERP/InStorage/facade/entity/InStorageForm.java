@@ -44,7 +44,6 @@ public class InStorageForm extends FormEntity {
 
     public InStorageForm() {
         super();
-        this.Products = new HashSet<>();
     }
 
     public Long getProject() {
